@@ -10,8 +10,25 @@
 
 <body>
     <main>
-        <p id="">Hello</p>
-        <input type="text" name="" id="">
+        <div class="container">
+            <!-- <p>History</p> -->
+            <div class="cube perspective">
+                <section id="messageLog" class="face front">
+                    <p id="past-message"></p>
+                </section>
+                <div class="overlay face front"></div>
+            </div>
+        </div>
+        <section class="active">
+            <div class="typewriter">
+                <p class="line typewriter">Welcome</p>
+            </div>
+            <!-- <p class="typewriter">Welcome</p> -->
+            <form action="" method="dialog">
+                <input type="text" name="" id="input">
+                <button>==></button>
+            </form>
+        </section>
     </main>
     <script src="./script.js"></script>
 </body>
