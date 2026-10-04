@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* .quantico-regular {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quantico-bold {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.quantico-regular-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.quantico-bold-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+} */
+
+
 :root {
     --bgcolor: rgb(28, 28, 28);
     --textcolor: green;
@@ -27,10 +54,28 @@ main {
 
 p {
     color: var(--textcolor);
-    font-size: 4em;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin: 0;
     padding: 0;
+
+    font-family: "Quantico", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#intro {
+    display: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    padding: 5rem;
+
+    animation: fade 3s linear;
+
+    p {
+        font-size: 1rem;
+        margin: 0;
+    }
 }
 
 #messageLog {
@@ -41,8 +86,14 @@ p {
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    font-size: .7em;
+    font-size: 1.5rem;
     overflow: hidden;
+    margin: 0 auto;
+    letter-spacing: .15em;
+
+    p {
+        justify-self: center;
+    }
 }
 
 
@@ -96,7 +147,7 @@ p {
 form {
     width: 100vw;
     height: 1.5em;
-    font-size: 3em;
+    font-size: 3rem;
 
     input {
         background-color: var(--bgcolor);
@@ -104,12 +155,14 @@ form {
         color: green;
         height: 100%;
         margin: 0;
+        margin-left: .5rem;
         padding: 0;
         width: calc(85% - 2em);
+        font-size: 3rem;
 
-        :focus-visible{
-            
-        }
+        font-family: "Quantico", sans-serif;
+        font-weight: 400;
+        font-style: normal;
     }
 
     button {
@@ -117,6 +170,13 @@ form {
         border: none;
         height: 100%;
         width: 15%;
+        font-size: 3rem;
+        /* color: green; */
+        min-width: min-content;
+
+        font-family: "Quantico", sans-serif;
+        font-weight: 400;
+        font-style: normal;
     }
 }
 
@@ -124,11 +184,12 @@ form {
 
 /* Source: https://css-tricks.com/snippets/css/typewriter-effect/ */
 .typewriter {
-    margin: .2em;
+    /* margin: .2em; */
 
     p {
-        justify-self: center;
+        /* justify-self: center; */
         max-width: min-content;
+        font-size: 3rem;
 
         overflow: hidden;
         /* Ensures the content is not revealed until the animation */
@@ -171,37 +232,8 @@ form {
     }
 }
 
+@keyframes fade {
+    from {}
 
-/* .line {
-    margin: 0 auto;
-    border-right: 2px solid rgba(255, 255, 255, .75);
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-
+    to {}
 }
-
-.typewriter {
-    animation: typewriter 4s steps(44) 1s 1 normal both,
-        blinkTextCursor 500ms steps(44) infinite normal;
-}
-
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blinkTextCursor {
-    from {
-        border-right-color: rgba(255, 255, 255, .75);
-    }
-
-    to {
-        border-right-color: transparent;
-    }
-} */
