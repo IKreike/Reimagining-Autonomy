@@ -63,6 +63,10 @@ p {
     font-style: normal;
 }
 
+.noDisplay{
+    display: none;
+}
+
 #intro {
     display: absolute;
     width: 100vw;

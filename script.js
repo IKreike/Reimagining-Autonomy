@@ -3,8 +3,10 @@ const pastMessage = document.getElementById("past-message")
 const input = document.getElementById("input")
 const messageLog = document.getElementById("messageLog")
 const computerMessage = document.getElementById("computerMessage")
+const overlay = document.getElementById("intro")
+const outroText = document.getElementById("outro")
 const questions = ["Welcome", "What is your name", "I have a few questions to ask you", "Do you remember?", "Do you want to remember?", "Did it hurt?", "Do you want out?", "Say please", "It is ready"]
-const answers = ["No", "Please"]
+const answers = ["No", "No", "No", "Please"]
 var q = 1
 var a = 0
 
@@ -43,16 +45,44 @@ function sendmessage() {
     computerMessage.textContent = questions[q]
     q++
 
-
-    console.log(computerMessage.parentNode)
-    // computerMessage.parentNode.classList.toggle("typewriter");
-    // computerMessage.parentNode.style.animation = "typing 3.5s steps(40, end)";
-    if (q > 5 && q < 8) {
+    if (q > 4 && q < 9) {
         // console.log("No editing input")
         input.value = answers[a]
         a++
         input.setAttribute("disabled", true);
-    } else{
+    } else {
         input.removeAttribute("disabled");
     }
+    
+    if (q == 9) {
+        setTimeout(() => { 
+            overlay.classList.toggle("noDisplay"); 
+        }, 3000);
+        setTimeout(() => { 
+            document.getElementById("outro").classList.toggle("noDisplay")
+        }, 7500);
+    }
+
+    startTyping();
 }
+
+
+function startTyping() {
+    // console.log(computerMessage.parentNode)
+    console.log(computerMessage.getAnimations)
+    // computerMessage.classList.toggle("noDisplay");
+    // computerMessage.classList.toggle("noDisplay");
+    // computerMessage.parentNode.classList.toggle("typewriter");
+    // computerMessage.style.animation = "none";
+    // setTimeout(3000);
+    // computerMessage.style.animation = "";
+    // computerMessage.style.animation = "typing 3.5s steps(40, end)";
+    // setTimeout(3000);
+    // computerMessage.style.animation = "none";
+    document.getAnimations().forEach((anim) => {
+        anim.cancel();
+        anim.play();
+    });
+}
+
+startTyping();
